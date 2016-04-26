@@ -1,0 +1,1 @@
+WPF demo template with MVVM in a separate libraries + OxyPlot
