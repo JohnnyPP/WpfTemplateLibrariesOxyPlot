@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OxyPlot;
 using OxyPlot.Series;
+using OxyPlot.Axes;
 
 namespace WpfModel
 {
@@ -49,18 +50,22 @@ namespace WpfModel
 
             // Create two line series (markers are hidden by default)
             var series1 = new LineSeries { Title = "Series 1", MarkerType = MarkerType.Circle };
-            series1.Points.Add(new DataPoint(0, 0));
-            series1.Points.Add(new DataPoint(10, 18));
-            series1.Points.Add(new DataPoint(20, 12));
-            series1.Points.Add(new DataPoint(30, 8));
-            series1.Points.Add(new DataPoint(40, 15));
+            var time0 = new DateTime(2013, 5, 6, 3, 24, 0);
+            var time1 = new DateTime(2013, 5, 6, 3, 28, 0);
+            var time2 = new DateTime(2015, 05, 23);
+
+            series1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 01, 23)), 0));
+            series1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 03, 23)), 18));
+            series1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 07, 23)), 12));
+            series1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 09, 23)), 8));
+            series1.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 12, 23)), 15));
 
             var series2 = new LineSeries { Title = "Series 2", MarkerType = MarkerType.Square };
-            series2.Points.Add(new DataPoint(0, 4));
-            series2.Points.Add(new DataPoint(10, 12));
-            series2.Points.Add(new DataPoint(20, 16));
-            series2.Points.Add(new DataPoint(30, 25));
-            series2.Points.Add(new DataPoint(40, 5));
+            series2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 01, 23)), 4));
+            series2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 03, 23)), 12));
+            series2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 07, 23)), 16));
+            series2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 09, 23)), 25));
+            series2.Points.Add(new DataPoint(DateTimeAxis.ToDouble(new DateTime(2015, 12, 23)), 5));
 
             lineSeriesList.Add(series1);
             lineSeriesList.Add(series2);

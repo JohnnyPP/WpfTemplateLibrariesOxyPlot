@@ -50,7 +50,7 @@ namespace WpfViewModel
             var xAxis = new DateTimeAxis
             {
                 Position = AxisPosition.Bottom,
-                StringFormat = "dd/MM/yyyy",
+                StringFormat = "dd MM yyyy",
                 Title = "Date",
                 //IntervalLength = 75,
                 MinorIntervalType = DateTimeIntervalType.Days,
