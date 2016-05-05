@@ -20,11 +20,31 @@ namespace WpfViewModel
         {
             Model = new WpfModel.Model();
             ButtonClick = new Helper.ActionCommand(ButtonClickCommand);
+            PlotData();
+        }
 
+        #endregion
+
+        #region Properties
+
+        public WpfModel.Model Model { get; set; }
+        public Helper.ActionCommand ButtonClick { get; set; }
+        public PlotModel OxyPlotModel { get; private set; }
+
+        #endregion
+
+        #region Methods
+
+        private void ButtonClickCommand()
+        {
+            Model.IncrementTextBox();
+        }
+
+        private void PlotData()
+        {
             // Create the plot model
             var tmp = new PlotModel { Title = "Simple example", Subtitle = "using OxyPlot" };
-
-            // Create two line series (markers are hidden by default)
+           // Create two line series (markers are hidden by default)
             var series1 = new LineSeries { Title = "Series 1", MarkerType = MarkerType.Circle };
             series1.Points.Add(new DataPoint(0, 0));
             series1.Points.Add(new DataPoint(10, 18));
@@ -44,26 +64,8 @@ namespace WpfViewModel
             tmp.Series.Add(series2);
 
             // Axes are created automatically if they are not defined
-
             // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
             this.OxyPlotModel = tmp;
-        }
-
-        #endregion
-
-        #region Properties
-
-        public WpfModel.Model Model { get; set; }
-        public Helper.ActionCommand ButtonClick { get; set; }
-        public PlotModel OxyPlotModel { get; private set; }
-
-        #endregion
-
-        #region Methods
-
-        private void ButtonClickCommand()
-        {
-            Model.IncrementTextBox();
         }
 
         #endregion
