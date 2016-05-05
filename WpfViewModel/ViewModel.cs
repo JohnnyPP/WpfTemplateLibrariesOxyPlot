@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OxyPlot;
 using OxyPlot.Series;
+using OxyPlot.Axes;
 
 namespace WpfViewModel
 {
@@ -43,15 +44,31 @@ namespace WpfViewModel
         private void PlotData()
         {
             // Create the plot model
-            var tmp = new PlotModel { Title = "Simple example", Subtitle = "using OxyPlot" };
+            var plotModel = new PlotModel { Title = "Simple example", Subtitle = "using OxyPlot" };
+            //var dateTimeAxis = new DateTimeAxis();
+            //dateTimeAxis.IntervalType = DateTimeIntervalType.Auto;
+            var xAxis = new DateTimeAxis
+            {
+                Position = AxisPosition.Bottom,
+                StringFormat = "dd/MM/yyyy",
+                Title = "Date",
+                //IntervalLength = 75,
+                MinorIntervalType = DateTimeIntervalType.Days,
+                IntervalType = DateTimeIntervalType.Days,
+                MajorGridlineStyle = LineStyle.Solid,
+                MinorGridlineStyle = LineStyle.None,
+            };
+            plotModel.Axes.Add(xAxis);
+            var linearAxis = new LinearAxis();
+            plotModel.Axes.Add(linearAxis);
 
             // Add the series to the plot model
-            tmp.Series.Add(Model.ModelPlotData()[0]);
-            tmp.Series.Add(Model.ModelPlotData()[1]);
+            plotModel.Series.Add(Model.ModelPlotData()[0]);
+            plotModel.Series.Add(Model.ModelPlotData()[1]);
 
             // Axes are created automatically if they are not defined
             // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
-            this.OxyPlotModel = tmp;
+            this.OxyPlotModel = plotModel;
         }
 
         #endregion
