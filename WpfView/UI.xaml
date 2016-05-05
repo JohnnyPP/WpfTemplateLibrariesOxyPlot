@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
         xmlns:local="clr-namespace:WpfView"
         mc:Ignorable="d"
         Title="MainWindowUI" Height="350" Width="525">
     <Grid>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding ButtonClick}"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="107,7,0,0" TextWrapping="Wrap" Text="{Binding Model.Click}" VerticalAlignment="Top" Width="120"/>
-
+        <oxy:PlotView Model="{Binding OxyPlotModel}" Margin="0,35,0,0" />
     </Grid>
 </Window>
