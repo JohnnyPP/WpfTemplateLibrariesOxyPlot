@@ -60,6 +60,7 @@ namespace WpfViewModel
             };
             plotModel.Axes.Add(xAxis);
             var linearAxis = new LinearAxis();
+            linearAxis.MajorGridlineStyle = LineStyle.Solid;
             plotModel.Axes.Add(linearAxis);
 
             // Add the series to the plot model
