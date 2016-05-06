@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDemo", "WpfDemo\WpfDemo.csproj", "{12E61F76-232C-4F61-B443-B2ED8B874116}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "WpfDemo\Application.csproj", "{12E61F76-232C-4F61-B443-B2ED8B874116}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfModel", "WpfModel\WpfModel.csproj", "{DA65218E-958A-45DB-B76B-28C17CB7E918}"
 EndProject
