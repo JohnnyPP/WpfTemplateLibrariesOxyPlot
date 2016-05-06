@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfViewModel", "WpfViewMode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfView", "WpfView\WpfView.csproj", "{9D7169E8-5B29-4AD6-8E3C-2536AFB29F4F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Visualization", "Visualization", "{13E220D2-8C75-45F9-A56F-555A5369AACC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA65218E-958A-45DB-B76B-28C17CB7E918} = {13E220D2-8C75-45F9-A56F-555A5369AACC}
+		{FBEE9130-67BD-46B1-A8F9-3A6F145214EC} = {13E220D2-8C75-45F9-A56F-555A5369AACC}
+		{9D7169E8-5B29-4AD6-8E3C-2536AFB29F4F} = {13E220D2-8C75-45F9-A56F-555A5369AACC}
 	EndGlobalSection
 EndGlobal
